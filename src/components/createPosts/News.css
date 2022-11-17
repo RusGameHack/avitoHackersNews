@@ -1,0 +1,139 @@
+.view-posts{
+    min-height: 100vh;
+}
+.Autor {
+    color: slategray;
+    font-weight: 500;
+}
+.news {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.new-block {
+    padding: 35px 0;
+}
+.news-block, .post-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    background-color: #161f34;
+    border-radius: 20px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+}
+.block-left {
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    justify-content: space-between;
+    width: 90%;
+}
+.block-title {
+    text-align: left;
+}
+.block-title, .news-block .block-title a{
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+.news-block .block-title a:hover{
+    color: white;
+    font-weight: 700;
+    text-decoration: underline;
+}
+.block-by, .block-text, .block-title, .block-time, .news-block a{
+    margin-bottom: 10px;
+}
+.block-by a, .block-text, .block-time, .news-block a{
+    color: slategray;
+}
+.block-text{
+    text-align: left;
+    color: #e6e6e6;
+    line-height: 1.2em;
+    margin-right: 15px;
+}
+.block-text.news {
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2em;
+    max-height: 1.3em;
+    text-align: left;
+    padding-right: 1em;
+    width: fit-content;
+    justify-content: start;
+    max-width: 100%;
+}
+.news-block a:hover{
+    color: white;
+    text-decoration: none;
+    transition: .2s all;
+}
+.block-left-last {
+    display: flex;
+    width: 100%;
+}
+.block-time{
+    margin-right: 3%;
+}
+button.reloadBtn {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    background: transparent;
+    color: white;
+    border-color: white;
+    border-radius: 10px;
+    transition: .25s all;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px 15px;
+}
+button.reloadBtn:hover {
+    color: black;
+    border-color: white;
+    background-color: white;
+}
+@media(min-width: 1441px){
+    .block-title a{
+        font-size: 24px;
+    }
+    .block-by{
+        font-size: 23px;
+        margin-bottom: 18px;
+    }
+    .block-right a{
+        font-size: 22px;
+    }
+    .block-text.news{
+        font-size: 22px;
+    }
+    button.reloadBtn {
+        right: -40px;
+        top: 20px;
+        font-size: 24px;
+        padding: 8px 18px;
+    }
+}
+@media(max-width: 991px){
+    button.reloadBtn {
+        right: -10%;
+        padding: 3px 10px;
+        font-size: 16px;
+    }
+}
+@media(max-width: 540px){
+    button.reloadBtn {
+        position: relative;
+        margin: 0 auto;
+        right: 0;
+    }
+    .news-block{
+        flex-direction: column;
+    }
+    .block-left, .block-title {
+        width: 100%;
+    }
+}
