@@ -1,4 +1,4 @@
-import {Component, useState} from "react";
+import {Component} from "react";
 import CreateNews from "./CreateNews";
 import "./News.css";
 

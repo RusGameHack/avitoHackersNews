@@ -1,7 +1,4 @@
-/* Я бы с удовольствием все fetch укомплектовал бы в один компонент с выбором того, что отрисовать и что вызвать, 
-но ввиду ограниченного времени, из-за того, что мне письмо пришло 15-го числа,
-мне пришлось разделять на отдельные для экономии времени */
-import {Component, useState} from "react";
+import {Component} from "react";
 import NormalDate from "../NormalDate";
 import parse from "html-react-parser";
 
@@ -43,8 +40,6 @@ export default class CreateComment extends Component {
     } else if (!isLoaded){
       return <p></p>
     } else {
-      const {Ccomment} = this.state;
-      
       const btn = (e)=>{
         e.preventDefault();
         console.log(e.target.parentNode.querySelector('.New-comment'));
@@ -62,17 +57,17 @@ export default class CreateComment extends Component {
                     <div className="block-text">{parse(String(items.text))}</div>
                     <div className="block-time"><NormalDate time={items.time}/></div>
                     {items.kids
-                    ?(
-                      <div 
-                        className="Ccomments"
-                        onClick={(e)=>{
-                          btn(e);
-                          console.log(e);
-                        }}
-                        >
-                        {items.kids.length} comments
-                      </div>)
-                      :""
+                      ?(
+                        <div 
+                          className="Ccomments"
+                          onClick={(e)=>{
+                            btn(e);
+                            console.log(e);
+                          }}
+                          >
+                          {items.kids.length} comments
+                        </div>
+                      ):""
                     }
                     <div className="New-comment">
                       {this.state.Ccomment}
@@ -82,8 +77,8 @@ export default class CreateComment extends Component {
                     <div className="block-text deleted">Deleted comment</div>
                     <div className="block-time"><NormalDate time={items.time}/></div>
                   </div>
-                )}
-                
+                )
+              }
             </div>
         )
     }
